@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var content = Umbraco.Content(Guid.Parse("1ac7ae30-586a-4f48-a1d6-5a889867aaaa"));
+    var selection = Enumerable.Empty<IPublishedContent>();
+
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("serviceCards").Where(x => x.IsVisible()).ToList();
+    }
+        
+}
+
+<div class="content">
+        @foreach (var item in selection)
+        {
+            var headline = item.Value<string>("serviceCardHeadline");
+            var text = item.Value<string>("serviceCardText");
+            var image = item.Value<IPublishedContent>("serviceCardImage")?.Url();
+
+            <div class="content-box">
+                <h6>@headline</h6>
+                <img src="@image" alt="@headline">
+                <p>@text</p>
+            </div>
+        }
+</div>

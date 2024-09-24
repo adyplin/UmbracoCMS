@@ -1,0 +1,104 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Value("pageTitle") ?? null;
+    
+    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+	var dotsbackgroundImage = Model?.Value<IPublishedContent>("trustedBackgroundImage")?.Url() ?? "";
+	var forefrontImage = Model?.Value<IPublishedContent>("trustedForefrontImage")?.Url() ?? "";
+	var successBackground = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
+	var successImage = Model?.Value<IPublishedContent>("successForefrontImage")?.Url() ?? "";
+}
+
+<section id="hero">
+	<div class="background">
+		<img src="@backgroundImage" alt="">
+	</div>
+	<div class="container">
+		<div class="content-box">
+			<h1 class="title">@Model?.Value("heroHeadline")</h1>
+			<p class="ingress">@Model?.Value("heroText")</p>
+			<a href="@Model?.Value("heroButtonUrl")" class="btn-primary">@Model?.Value("heroButtonText")</a>
+		</div>
+	</div>
+</section>
+
+<section id="about-us">
+	<div class="container">
+		<div class="content">
+			<div class="headline">
+				<h5>@Model?.Value("aboutSectionTitle")</h5>
+				<h2>@Model?.Value("aboutHeadline")</h2>
+			</div>
+			<p class="quote">@Model?.Value("aboutQuote")</p>
+			<p class="paragraph">@Model?.Value("aboutText")</p>
+			<div class="signature-container">
+				<img src="@signatureImage" alt="@Model?.Value("aboutSignature")" class="signature-image">
+				<div class="person-info">
+					<p class="name">@Model?.Value("aboutSignature")</p>
+				</div>
+			</div>
+		</div>
+		<div class="form-container">
+			
+		</div>
+	</div>
+</section>
+
+
+<section class="services">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model?.Value("servicesTitle")</h5>
+            <h2>@Model?.Value("servicesHeadline")</h2>
+        </div>
+		
+			@await Html.PartialAsync("Components/ServiceCard")
+    </div>
+</section>
+
+<section id="trusted">
+	<div class="container">
+		<div class="content">
+			<h2>@Model.Value("trustedTitle")</h2>
+			<h3>@Model.Value("trustedDescription")</h3>
+			<p>@Model.Value("trustedText")</p>
+			<a class="btn-primary">@Model.Value("trustedButtonText")</a>
+		</div>
+		<div class="background">
+			<img src="@dotsbackgroundImage" alt="@Model.Value("trustedBackgroundImage")" class="dots-background">
+		</div>
+		<img src="@forefrontImage" alt="@Model.Value("trustedForegroundImage")" class="people-image">
+	</div>
+</section>
+
+<section id="success" >
+	<div class="container">
+		<div class="headline">
+			<h6>@Model.Value("successHeadline")</h6>
+			<h2>@Model.Value("successTitle")</h2>
+		</div>
+        
+		<div class="background">
+			<img src="@successBackground" alt="Model.Value("successBackgroundImage")" class="dots-background">
+		</div>
+		<img src="@successImage" class="people-image"alt="Model.Value("successForegroundImage")">
+	</div>
+</section>
+
+<section id="projects">
+	<div class="container">
+		<div class="headline">
+			<h6>@Model.Value("projectsHeadline")</h6>
+			<h2>@Model.Value("projectsTitle")</h2>
+		</div>
+		
+		@await Html.PartialAsync("partials/components/ProjectCard.cshtml")
+	</div>
+</section>
+
+
+

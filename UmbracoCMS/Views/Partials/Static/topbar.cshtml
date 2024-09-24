@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+}
+
+<section id="topbar">
+    <div class="contact-box bg-primary">
+        <div class="container">
+            <div class="text">@officeLocation</div>
+            <button class="btn-menu"><i class="fa-regular fa-bars"></i></button>
+            <div class="social">
+                <a href="https://www.facebook.com" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.x.com" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

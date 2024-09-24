@@ -1,0 +1,42 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var content = Umbraco.Content(Guid.Parse("5a405815-8931-48bb-b3bd-7154fff24847"));
+    var selection = Enumerable.Empty<IPublishedContent>();
+
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("projectCards").Where(x => x.IsVisible()).ToList();
+    }
+        
+}
+
+<div class="content">
+        @foreach (var item in selection)
+        {
+            var headline = item.Value<string>("projectCardHeadline");
+            var description = item.Value<string>("projectCardDescription");
+            var image = item.Value<IPublishedContent>("projectCardImage")?.Url();
+
+                <div class="content-box">
+                    <img src="@image" alt="@headline">
+                    <div class="text-box">
+                        <div class="text">
+                            <h6>@headline</h6>
+                            <p>@description</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+        }
+</div>
+
+
+
+
+
+
+
+

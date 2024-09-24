@@ -1,0 +1,45 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var siteName = settings?.Value<string>("siteName") ?? "";
+    var siteLogotype = settings?.Value<IPublishedContent>("siteLogotype")?.Url() ?? "";
+
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+}
+
+<section id="navbar">
+    <div class="container">
+        <div class="content-box">
+            <a class="logotype" href="/"><img src="@siteLogotype" alt="@siteName"></a>
+            <nav class="links">
+                @if (selection?.Length > 0)
+                {
+                    @foreach (var item in selection)
+                    {
+                        <a class="@(item.IsAncestorOrSelf(Model) ? "nav-button active" : "nav-button")" href="@item.Url(PublishedUrlProvider)" title="@item.Name">@item.Name</a>
+                    }
+                }
+        
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="search"><i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
