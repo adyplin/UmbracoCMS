@@ -430,10 +430,14 @@ footer .container {
     gap: 40px;
   }
 }
+.services .container .content a {
+  text-decoration: none;
+}
 .services .container .content .content-box {
   background-color: var(--color-light);
   border: 1px solid var(--color-gray);
   text-align: left;
+  
 }
 .services .container .content .content-box h6 {
   color: var(--color-primary);
@@ -441,11 +445,13 @@ footer .container {
 }
 .services .container .content .content-box p {
   padding: 1.5em 1em 2em 2em;
+  color: var(--color-primary);
 }
 .services .container .content .content-box:hover {
   transition: all 0.15s ease-in-out;
   cursor: pointer;
   box-shadow: 0px 10px 12px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 20px -1px rgba(19, 16, 34, 0.05);
+  text-decoration: none;
 }
 
 #trusted {
@@ -704,28 +710,36 @@ footer .container {
   }
 }
 
-#about-us-topbar {
+#page-title {
   background-color: var(--color-gray);
   position: relative;
   padding: 50px 0;
   overflow: hidden;
 }
-#about-us-topbar .container {
+#page-title .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
-#about-us-topbar .container i {
+
+#page-title .container .breadcrumb {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+#page-title .container i {
   font-weight: 400;
-  margin: 0 10px;
+  margin: 0 20px;
 }
-#about-us-topbar .background .left {
+#page-title .background .left {
   position: absolute;
   left: 0;
   bottom: 0;
 }
-#about-us-topbar .background .right {
+#page-title .background .right {
   position: absolute;
   bottom: 30px;
   right: 0;

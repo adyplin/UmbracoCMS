@@ -19,11 +19,13 @@
             var headline = item.Value<string>("serviceCardHeadline");
             var text = item.Value<string>("serviceCardText");
             var image = item.Value<IPublishedContent>("serviceCardImage")?.Url();
-
-            <div class="content-box">
-                <h6>@headline</h6>
-                <img src="@image" alt="@headline">
-                <p>@text</p>
-            </div>
+            
+            <a href="@item.Url()">
+                <div class="content-box">
+                    <h6>@headline</h6>
+                    <img src="@image" alt="@headline">
+                    <p>@text</p>
+                </div>
+            </a>
         }
 </div>

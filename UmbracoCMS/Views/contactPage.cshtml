@@ -1,5 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using contentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle") ?? null;
 }
+

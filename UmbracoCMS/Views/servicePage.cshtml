@@ -1,5 +1,26 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using contentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Value("pageTitle") ?? null;
+
+	var selection = Umbraco.Content(Guid.Parse("1ac7ae30-586a-4f48-a1d6-5a889867aaaa"))
+    .ChildrenOfType("serviceCards")
+    .Where(x => x.IsVisible());
 }
+
+
+<section class="services">
+    <div class="container">
+        @if (!string.IsNullOrEmpty(Model.Value("customHeadline").ToString())) {
+        <div class="headline">
+            <h2>@Model.Value("customHeadline")</h2>
+        </div>
+        }
+		
+			@await Html.PartialAsync("Components/ServiceCard")
+    </div>
+</section>
+

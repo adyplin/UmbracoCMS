@@ -13,6 +13,8 @@
 	var pageTitle = !string.IsNullOrEmpty(ViewBag?.Title) ? $"{ViewBag.Title} | {siteName} - {siteTagline}" : $"{siteName} - {siteTagline}";
 }
 
+
+
 <!DOCTYPE html>
 <html lang="sv-se">
 <head>
@@ -32,6 +34,10 @@
         </header>
 
 		<main>
+        @if (!string.IsNullOrEmpty(ViewBag.Title))
+        {
+             @await Html.PartialAsync("Static/breadcrumb")
+        }
 			@RenderBody()
 		</main>
 		<footer>

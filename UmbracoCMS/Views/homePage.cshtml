@@ -1,5 +1,6 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using contentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
     Layout = "mainLayout.cshtml";
@@ -12,6 +13,8 @@
 	var successBackground = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
 	var successImage = Model?.Value<IPublishedContent>("successForefrontImage")?.Url() ?? "";
 }
+
+
 
 <section id="hero">
 	<div class="background">

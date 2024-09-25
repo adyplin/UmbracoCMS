@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    <!-- var content = Umbraco.Content(Guid.Parse("5a405815-8931-48bb-b3bd-7154fff24847")); ändra guid  -->
+    var selection = Enumerable.Empty<IPublishedContent>();
+    
+
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("expertCards").Where(x => x.IsVisible()).ToList();
+    }
+        
+}
+
+

@@ -4,6 +4,75 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\eifjqx5i\onatrixbrand.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\0ghizq22\sc4.svg" />
+    <Content Include="wwwroot\media\0znivxbg\successpeople.svg" />
+    <Content Include="wwwroot\media\125lx0zz\hero-slider.svg" />
+    <Content Include="wwwroot\media\15og0tdl\sc2.svg" />
+    <Content Include="wwwroot\media\2iifp5iv\tm-6.svg" />
+    <Content Include="wwwroot\media\2lhdoq5g\tm-7.svg" />
+    <Content Include="wwwroot\media\2sxp313m\project1.svg" />
+    <Content Include="wwwroot\media\34ffa2m1\projectsmall1.svg" />
+    <Content Include="wwwroot\media\3s3pu213\successdot.svg" />
+    <Content Include="wwwroot\media\4elbg1sq\projectsmall4.svg" />
+    <Content Include="wwwroot\media\4ilher4l\risk-big2.svg" />
+    <Content Include="wwwroot\media\4ppjwkyr\tm-3.svg" />
+    <Content Include="wwwroot\media\5qvpjyds\tm-6.svg" />
+    <Content Include="wwwroot\media\akzdxdeo\tm-4.svg" />
+    <Content Include="wwwroot\media\ceidmijk\projectsmall2.svg" />
+    <Content Include="wwwroot\media\cz2hdcsh\risk-big1.svg" />
+    <Content Include="wwwroot\media\dolfjqsf\project2.svg" />
+    <Content Include="wwwroot\media\dsup5j20\sc3.svg" />
+    <Content Include="wwwroot\media\dylhch5l\tm-1.svg" />
+    <Content Include="wwwroot\media\f11ivcl0\sc6.svg" />
+    <Content Include="wwwroot\media\f2lfgoe1\signature-tina.svg" />
+    <Content Include="wwwroot\media\fjjdmhsl\tm-5.svg" />
+    <Content Include="wwwroot\media\fwsk5epw\risk-big1.svg" />
+    <Content Include="wwwroot\media\hhofmzdi\sc4.svg" />
+    <Content Include="wwwroot\media\i1td4uc2\project4.svg" />
+    <Content Include="wwwroot\media\i31hjggx\sc5.svg" />
+    <Content Include="wwwroot\media\ijudvu5j\trustedpeople.svg" />
+    <Content Include="wwwroot\media\jigfoyqq\leftglobe.svg" />
+    <Content Include="wwwroot\media\jkxhicst\sc1.svg" />
+    <Content Include="wwwroot\media\jsdnpdk3\tm-2.svg" />
+    <Content Include="wwwroot\media\kdforssh\sc5.svg" />
+    <Content Include="wwwroot\media\kxclvs0v\risk-big2.svg" />
+    <Content Include="wwwroot\media\kxqlbomy\project1.svg" />
+    <Content Include="wwwroot\media\kz3fatpe\tm-1.svg" />
+    <Content Include="wwwroot\media\lv1jdtr1\rightglobe.svg" />
+    <Content Include="wwwroot\media\mbxlfp0i\sc1.svg" />
+    <Content Include="wwwroot\media\mcypqzus\tm-5.svg" />
+    <Content Include="wwwroot\media\msgm05nb\projectsmall3.svg" />
+    <Content Include="wwwroot\media\natnc1l3\tm-3.svg" />
+    <Content Include="wwwroot\media\nejhqsy0\sc6.svg" />
+    <Content Include="wwwroot\media\o45nbrgn\sc3.svg" />
+    <Content Include="wwwroot\media\omfajgvz\project2.svg" />
+    <Content Include="wwwroot\media\pghlpvlz\tm-2.svg" />
+    <Content Include="wwwroot\media\qacazkwt\project3.svg" />
+    <Content Include="wwwroot\media\qb1bqs1u\trustedpeople.svg" />
+    <Content Include="wwwroot\media\qgsfcyew\tm-7.svg" />
+    <Content Include="wwwroot\media\qzek00y0\project4.svg" />
+    <Content Include="wwwroot\media\r0uc5wiz\onatrix.svg" />
+    <Content Include="wwwroot\media\rt1kiekh\sc2.svg" />
+    <Content Include="wwwroot\media\sc1jl0l2\projectsmall2.svg" />
+    <Content Include="wwwroot\media\sl3bylvi\onatrix.svg" />
+    <Content Include="wwwroot\media\slrbbhrh\project3.svg" />
+    <Content Include="wwwroot\media\szzpayaf\tm-4.svg" />
+    <Content Include="wwwroot\media\tc4pmrki\projectsimg.svg" />
+    <Content Include="wwwroot\media\tcpppnwd\project3.svg" />
+    <Content Include="wwwroot\media\tfehvr0r\project2.svg" />
+    <Content Include="wwwroot\media\uz3lalvh\project4.svg" />
+    <Content Include="wwwroot\media\vzvcj4b3\sc1.svg" />
+    <Content Include="wwwroot\media\xawfqrfh\trusteddot.svg" />
+    <Content Include="wwwroot\media\xwzp1jdr\project1.svg" />
+    <Content Include="wwwroot\media\y15bewc2\projectsmall3.svg" />
+    <Content Include="wwwroot\media\ynfhszse\risk-about.svg" />
+    <Content Include="wwwroot\media\z3fh3rty\projectsmall4.svg" />
+    <Content Include="wwwroot\media\zvhbzd4n\projectsmall1.svg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="14.2.0" />
