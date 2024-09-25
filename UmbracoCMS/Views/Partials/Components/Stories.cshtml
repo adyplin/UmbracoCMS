@@ -1,0 +1,28 @@
+﻿
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var content = Umbraco.Content(Guid.Parse("00012f47-6e81-4383-ab88-d1ce5c893e3a"));
+    var selection = Enumerable.Empty<IPublishedContent>();
+
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("stories").Where(x => x.IsVisible()).ToList();
+    }
+        
+}
+
+<div class="content">
+        @foreach (var item in selection)
+        {
+            var number = item.Value<string>("storiesNumbers");
+            var text = item.Value<string>("storiesText");
+
+               <div class="content-box">
+                <h1>@number</h1>
+                <h5>@text</h5>
+            </div>
+        }
+</div>

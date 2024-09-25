@@ -81,6 +81,7 @@
 			<h6>@Model.Value("successHeadline")</h6>
 			<h2>@Model.Value("successTitle")</h2>
 		</div>
+		@await Html.PartialAsync("Components/Stories")
         
 		<div class="background">
 			<img src="@successBackground" alt="Model.Value("successBackgroundImage")" class="dots-background">
@@ -95,9 +96,8 @@
 			<h6>@Model.Value("projectsHeadline")</h6>
 			<h2>@Model.Value("projectsTitle")</h2>
 		</div>
-		
+    </div>
 		@await Html.PartialAsync("partials/components/ProjectCard.cshtml")
-	</div>
 </section>
 
 
