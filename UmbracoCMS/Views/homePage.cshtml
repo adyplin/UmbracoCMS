@@ -51,8 +51,8 @@
 	</div>
 </section>
 
-
-<section class="services">
+@await Html.PartialAsync("Components/ServiceCard")
+<!-- <section class="services">
     <div class="container">
         <div class="headline">
             <h5>@Model?.Value("servicesTitle")</h5>
@@ -61,7 +61,7 @@
 		
 			@await Html.PartialAsync("Components/ServiceCard")
     </div>
-</section>
+</section> -->
 
 <section id="trusted">
 	<div class="container">
@@ -102,6 +102,8 @@
     </div>
 		@await Html.PartialAsync("partials/components/ProjectCard.cshtml")
 </section>
+
+@await Html.PartialAsync("Static/partners")
 
 
 

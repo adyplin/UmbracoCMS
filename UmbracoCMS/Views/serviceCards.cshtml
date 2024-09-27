@@ -6,7 +6,9 @@
 	ViewBag.Title = Model.Name;
 }
 
-<!-- @if (string.IsNullOrEmpty(ViewBag.Title))
-{
-	@await Html.PartialAsync("Static/breadcrumb")
-} -->
+<section id="risk-management">
+	@Html.Raw(Model.Value("singlePageText"))
+</section>
+
+ @await Html.PartialAsync("Static/subFooter")
+

@@ -1,6 +1,8 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @using Umbraco.Cms.Core.Routing
 @using Umbraco.Extensions
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 
 @inject IPublishedUrlProvider PublishedUrlProvider
 
@@ -9,6 +11,11 @@
     var selection = Model.Ancestors().ToArray(); 
     var homePageDisplayName = "Home";
     var isFirstItem = true;
+
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "breadcrumb") ?? null;
+    var imageLeft = settings?.Value<IPublishedContent>("breadcrumbImageLeft")?.Url() ?? "";
+    var imageRight = settings?.Value<IPublishedContent>("breadcrumbImageRight")?.Url() ?? "";
 }
 
 
@@ -29,4 +36,9 @@
             </ul>
         }
     </div>
+
+        <div class="background">
+            <img class="left" src="@imageLeft" alt="hihi">
+            <img class="right" src="@imageRight" alt="hehe">
+        </div>
 </section>

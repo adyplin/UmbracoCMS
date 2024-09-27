@@ -5,6 +5,21 @@
 @{
     var content = Umbraco.Content(Guid.Parse("1ac7ae30-586a-4f48-a1d6-5a889867aaaa"));
     var selection = Enumerable.Empty<IPublishedContent>();
+    
+
+    string backgroundClass = "";
+
+    var currentPage = Umbraco.AssignedContentItem;
+
+    if (currentPage.ContentType.Alias == "homePage")
+    {
+        backgroundClass = "bg-gray";
+    }
+    else if (currentPage.ContentType.Alias == "servicePage")
+    {
+        backgroundClass = "bg-light";
+    }
+    
 
     if (content != null)
     {
@@ -13,19 +28,28 @@
         
 }
 
-<div class="content">
-        @foreach (var item in selection)
-        {
-            var headline = item.Value<string>("serviceCardHeadline");
-            var text = item.Value<string>("serviceCardText");
-            var image = item.Value<IPublishedContent>("serviceCardImage")?.Url();
-            
-            <a href="@item.Url()">
-                <div class="content-box">
-                    <h6>@headline</h6>
-                    <img src="@image" alt="@headline">
-                    <p>@text</p>
-                </div>
-            </a>
-        }
-</div>
+<section class="services @backgroundClass">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model?.Value("servicesTitle")</h5>
+            <h2>@Model?.Value("servicesHeadline")</h2>
+        </div>
+
+        <div class="content">
+                @foreach (var item in selection)
+                {
+                    var headline = item.Value<string>("serviceCardHeadline");
+                    var text = item.Value<string>("serviceCardText");
+                    var image = item.Value<IPublishedContent>("serviceCardImage")?.Url();
+                    
+                    <a href="@item.Url()">
+                        <div class="content-box">
+                            <h6>@headline</h6>
+                            <img src="@image" alt="@headline">
+                            <p>@text</p>
+                        </div>
+                    </a>
+                }
+        </div>
+    </div>
+</section>

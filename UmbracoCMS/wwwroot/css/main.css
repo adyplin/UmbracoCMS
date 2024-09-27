@@ -383,7 +383,7 @@ footer .container {
 }
 
 .services {
-  background-color: var(--color-gray);
+  /* background-color: var(--color-gray); */
   padding: 4em 0;
   text-align: center;
 }
@@ -721,6 +721,7 @@ footer .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 
 #page-title .container .breadcrumb {
@@ -729,6 +730,7 @@ footer .container {
   justify-content: center;
   align-items: center;
   list-style-type: none;
+  z-index: 2;
 }
 #page-title .container i {
   font-weight: 400;
@@ -738,11 +740,13 @@ footer .container {
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index: 1;
 }
 #page-title .background .right {
   position: absolute;
   bottom: 30px;
   right: 0;
+  z-index: 1;
 }
 
 #founder {
@@ -904,7 +908,7 @@ footer .container {
   display: flex;
   position: relative;
   padding: 200px 0 160px 0;
-  background-color: var(--color-gray);
+  /* background-color: var(--color-gray); */
 }
 .next-project .container {
   display: flex;

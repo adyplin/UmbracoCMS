@@ -4,5 +4,14 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle") ?? null;
+    var locationImage = Model?.Value<IPublishedContent>("locationImage")?.Url() ?? "";
 }
+
+ @await Html.PartialAsync("Static/subFooter")
+<section id="location">
+    <img src="@locationImage" alt="">
+</section>
+
+
+@await Html.PartialAsync("Static/partners")
 

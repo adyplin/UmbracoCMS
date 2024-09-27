@@ -4,15 +4,58 @@
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 
 @{
-    <!-- var content = Umbraco.Content(Guid.Parse("5a405815-8931-48bb-b3bd-7154fff24847")); ändra guid  -->
-    var selection = Enumerable.Empty<IPublishedContent>();
+    var content = Umbraco.Content(Guid.Parse("7ab933b1-2915-4907-9640-841675af2ac7"));
+    var ourExperts = Enumerable.Empty<IPublishedContent>();
     
 
     if (content != null)
     {
-        selection = content.ChildrenOfType("expertCards").Where(x => x.IsVisible()).ToList();
+        ourExperts = content.ChildrenOfType("expertCards").Where(x => x.IsVisible()).ToList();
     }
         
 }
 
 
+<section id="our-experts">
+    <div class="container">
+        <div class="title">
+            <h6>@Model.Value("ourExpertsHeadline")</h6>
+            <h2>@Model.Value("ourExpertsTitle")</h2>
+        </div>
+    
+
+        <div class="big-content">
+
+            @foreach (var expert in ourExperts.Take(3))
+            {
+                var description = expert.Value<string>("expertCardDescription");
+                var title = expert.Value<string>("expertCardTitle");
+                var image = expert.Value<IPublishedContent>("expertCardImage")?.Url();
+
+                <div class="big-content-box">
+                    <img src="@image" alt="@expert.Name" />
+                    <div class="subtitle">
+                        <h5>@title</h5>
+                        <p>@description</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="small-content">
+            @foreach (var expert in ourExperts.Skip(3))
+            {
+                var description = expert.Value<string>("expertCardDescription");
+                var title = expert.Value<string>("expertCardTitle");
+                var image = expert.Value<IPublishedContent>("expertCardImage")?.Url();
+                    
+                <div class="small-content-box">
+                    <img src="@image" alt="@expert.Name" />
+                    <div class="subtitle">
+                        <h6>@title</h6>
+                        <p>@description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

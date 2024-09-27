@@ -1,0 +1,57 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var officePhone = settings?.Value<string>("officePhone") ?? "";
+    var officeEmail = settings?.Value<string>("officeEmailAddress") ?? "";
+
+    var subFooterContent = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "subFooter");
+    var dotImage = subFooterContent?.Value<IPublishedContent>("subFooterDotsBgImage")?.Url() ?? "";
+    var bgImage = subFooterContent?.Value<IPublishedContent>("subFooterBgImage")?.Url() ?? "";
+    var bgPersonImage = subFooterContent?.Value<IPublishedContent>("subFooterBgPersonImage")?.Url() ?? "";
+    var headline = subFooterContent?.Value<string>("subFooterHeadline") ?? "";
+    var locationText = subFooterContent?.Value<string>("subFooterLocation") ?? "";
+    var numberText = subFooterContent?.Value<string>("subFooterPhone") ?? "";
+    var emailText = subFooterContent?.Value<string>("subFooterEmail") ?? "";
+
+    var currentPage = Umbraco.AssignedContentItem;
+
+    string backgroundClass = "bg-gray";
+
+    if (currentPage != null && currentPage.ContentType.Alias == "contactPage")
+    {
+        backgroundClass = "bg-light";
+    }
+}
+
+<section id="next-project" class="next-project @backgroundClass ">
+    <div class="container">
+        <div class="img-content">
+            <img class="dots" src="@dotImage" alt="">
+            <img class="green-bg" src="@bgImage" alt="">
+            <img class="person" src="@bgPersonImage" alt="">
+        </div>
+        <div class="text-content">
+            <div class="title">
+                <h2>@headline</h2>
+            </div>
+            <div class="subtitle">
+                <h6><i class="fa-sharp fa-regular fa-location-dot"></i>@locationText</h6>
+                <p>@officeLocation</p>
+            </div>
+            <div class="subtitle">
+                <h6><i class="fa-light fa-phone-flip"></i>@numberText</h6>
+                <p>@officePhone</p>
+            </div>
+            <div class="subtitle">
+                <h6><i class="fa-regular fa-envelope"></i>@emailText</h6>
+                <p>@officeEmail</p>
+            </div>
+        </div>
+    </div>
+</section>

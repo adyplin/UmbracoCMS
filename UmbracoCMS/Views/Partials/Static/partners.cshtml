@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "partners") ?? null;
+    var tag1 = settings?.Value<IPublishedContent>("partner1Image")?.Url() ?? "";
+    var tag2 = settings?.Value<IPublishedContent>("partner2Image")?.Url() ?? "";
+    var tag3 = settings?.Value<IPublishedContent>("partner3Image")?.Url() ?? "";
+    var tag4 = settings?.Value<IPublishedContent>("partner4Image")?.Url() ?? "";
+    var tag5 = settings?.Value<IPublishedContent>("partner5Image")?.Url() ?? "";
+}
+
+<section id="partners">
+    <div class="container">
+        <img src="@tag1" alt="">
+        <img src="@tag2" alt="">
+        <img src="@tag3" alt="">
+        <img src="@tag4" alt="">
+        <img src="@tag5" alt="">
+    </div>
+</section>  

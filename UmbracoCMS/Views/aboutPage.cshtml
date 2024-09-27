@@ -5,7 +5,55 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle") ?? null;
+
+	var founderImage = Model?.Value<IPublishedContent>("founderImage")?.Url() ?? "";
+	var reviewsImage = Model?.Value<IPublishedContent>("reviewsImage")?.Url() ?? "";
 }
+
+<section id="founder">
+	<div class="container">
+		<div class="image-box">
+			<img src="@founderImage" alt="">
+			<p>@Model.Value("founderDescription")</p>
+		</div>
+		<div class="text-box">
+			<p class="paragraph">@Model.Value("founderParagraph")</p>
+			<p>@Model.Value("founderTextColumn1")</p>
+			<p>@Model.Value("founderTextColumn2")</p>
+			<p>@Model.Value("founderTextColumn3")</p>
+			<p>@Model.Value("founderTextColumn4")</p>
+			<p>@Model.Value("founderTextColumn5")</p>
+			<p>@Model.Value("founderTextColumn6")</p>
+			<p>@Model.Value("founderTextColumn7")</p>
+		</div>
+	</div>
+</section>
+
+<section id="reviews">
+		<div class="content">
+			<div class="content-box">
+				<h6>@Model.Value("reviewsHeadline")</h6>
+				<h2>@Model.Value("reviewsTitle")</h2>
+				<p class="paragraph">@Model.Value("reviewsParagraph")</p>
+				<div class="star-rating">
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+				</div>
+				<div class="title">
+					<p>@Model.Value("reviewsName")</p>
+					<h6>@Model.Value("reviewsWorkplace")</h6>
+				</div>
+			</div>
+		</div>
+		<img src="@reviewsImage" alt="">
+</section>
+
+@await Html.PartialAsync("Components/ExpertCards")
+
+@await Html.PartialAsync("Static/subFooter")
 
 
 

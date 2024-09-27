@@ -4,11 +4,8 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle") ?? null;
-
-	var selection = Umbraco.Content(Guid.Parse("a15a7839-8b2d-4ee6-9996-cc47d4058768"))
-    .ChildrenOfType("projectsCards")
-    .Where(x => x.IsVisible());
 }
+@await Html.PartialAsync("Static/subFooter")
 
 
 
