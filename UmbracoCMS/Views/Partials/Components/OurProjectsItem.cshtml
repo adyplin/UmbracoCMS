@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var content = Umbraco.Content(Guid.Parse("5a405815-8931-48bb-b3bd-7154fff24847"));
+    var selection = Enumerable.Empty<IPublishedContent>();
+    
+
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("projectsCards").Where(x => x.IsVisible()).ToList();
+    }
+        
+}
+
+
+<div class="content-box">
+    @foreach (var item in selection)
+        {
+            var headline = item.Value<string>("projectCardHeadline");
+            var date = item.Value<string>("projectCardDate");
+            var ingress = item.Value<string>("projectCardIngress");
+            var image = item.Value<IPublishedContent>("projectCardThumbnail")?.Url();
+            var button = item.Value<string>("projectCardButton");
+
+            <div class="img-box">
+                <img src="@image" alt="@headline">
+                <div class="text-box">
+                    <h5>@headline</h5>
+                    <p class="date"><i class="fa-regular fa-calendar-days"></i>@date</p>
+                    <p>@ingress</p>
+                    <a href="@item.Url()">@button<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <hr>
+        }
+</div>
+
+
+
+
+
+
+

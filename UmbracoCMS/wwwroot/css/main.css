@@ -681,12 +681,15 @@ footer .container {
 }
 #projects .content .content-box .text-box:hover i {
   display: block;
-  color: var(--color-light);
   font-size: 50px;
   position: absolute;
   bottom: 40px;
   right: 40px;
   font-weight: 500;
+  color: var(--color-light);
+}
+#projects .content .content-box .text-box:hover h6 {
+  color: var(--color-secondary);
 }
 #projects .content .content-box .text-box:hover .text {
   display: flex;
@@ -1085,8 +1088,8 @@ footer .container {
 }
 #our-projects .container .content-box {
   grid-area: content;
-  border-right: 2px solid var(--color-gray);
   padding: 0 20px;
+
 }
 #our-projects .container .content-box .date {
   font-size: 14px;

@@ -5,6 +5,14 @@
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Value("pageTitle") ?? null;
 }
+<section id="our-projects">
+	<div class="container">
+		<div class="content-box">
+			@await Html.PartialAsync("Components/OurProjectsItem")
+		</div>
+		@await Html.PartialAsync("Static/tags")
+	</div>
+</section>
 @await Html.PartialAsync("Static/subFooter")
 
 

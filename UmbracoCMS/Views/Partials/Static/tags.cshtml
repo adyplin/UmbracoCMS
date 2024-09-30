@@ -1,0 +1,38 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "tags") ?? null;
+    var tag1 = settings?.Value<string>("tagButton1") ?? "";
+    var tag2 = settings?.Value<string>("tagButton2") ?? "";
+    var tag3 = settings?.Value<string>("tagButton3") ?? "";
+    var tag4 = settings?.Value<string>("tagButton4") ?? "";
+    var tag5 = settings?.Value<string>("tagButton5") ?? "";
+    var tag6 = settings?.Value<string>("tagButton6") ?? "";
+    var tag7 = settings?.Value<string>("tagButton7") ?? "";
+    var tag8 = settings?.Value<string>("tagButton8") ?? "";
+}
+
+
+<div class="tags-box">
+	<h5>Tags</h5>
+	<div class="button-box">
+		<a href="#"class="btn-light">@tag1</a>
+		<a href="#"class="btn-light">@tag2</a>
+	</div>
+	<div class="button-box">
+		<a href="#"class="btn-light">@tag3</a>
+		<a href="#"class="btn-light">@tag4</a>
+		<a href="#"class="btn-light">@tag5</a>
+	</div>
+	<div class="button-box">
+		<a href="#" class="btn-light">@tag6</a>
+		<a href="#"class="btn-light">@tag7</a>
+	</div>
+	<div class="button-box">
+		<a href="#" class="btn-light">@tag8</a>
+	</div>
+
+</div>

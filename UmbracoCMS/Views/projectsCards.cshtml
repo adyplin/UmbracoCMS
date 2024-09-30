@@ -5,4 +5,8 @@
 	ViewBag.Title = Model.Name;
 }
 
+<section id="recent-projects">
+	@Html.Raw(Model.Value("singlePageText"))
+</section>
+
  @await Html.PartialAsync("Static/subFooter")

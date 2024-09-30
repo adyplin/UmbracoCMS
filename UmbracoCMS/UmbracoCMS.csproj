@@ -73,6 +73,24 @@
     <Content Include="wwwroot\media\z3fh3rty\projectsmall4.svg" />
     <Content Include="wwwroot\media\zvhbzd4n\projectsmall1.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\0tkfjg0p\tag1.svg" />
+    <Content Include="wwwroot\media\0wolxn1x\report-table.svg" />
+    <Content Include="wwwroot\media\5syjufx1\dot-project.svg" />
+    <Content Include="wwwroot\media\amoetg2w\report-3.svg" />
+    <Content Include="wwwroot\media\dppkpb11\founder.svg" />
+    <Content Include="wwwroot\media\e0afop1y\project-bg-person.svg" />
+    <Content Include="wwwroot\media\gx1j3xqu\brandon.svg" />
+    <Content Include="wwwroot\media\nskl5wyv\tag5.svg" />
+    <Content Include="wwwroot\media\oljd5p3g\gray.svg" />
+    <Content Include="wwwroot\media\qeze1qvv\map.svg" />
+    <Content Include="wwwroot\media\s0flr24m\report-stairs.svg" />
+    <Content Include="wwwroot\media\sbxpztqa\kevinbig.svg" />
+    <Content Include="wwwroot\media\t1no44uu\project-bg.svg" />
+    <Content Include="wwwroot\media\tdwl5oyk\tag4.svg" />
+    <Content Include="wwwroot\media\ugglb2js\tag2.svg" />
+    <Content Include="wwwroot\media\y0hag41l\tag3.svg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="14.2.0" />
