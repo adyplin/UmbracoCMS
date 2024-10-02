@@ -366,20 +366,62 @@ footer .container {
 #about-us {
   padding: 80px 0;
 }
+#about-us .container {
+  display: flex;
+  position: relative;
+}
 #about-us .container .headline {
   padding: 30px 0;
 }
 #about-us .container .headline h5 {
   color: var(--color-secondary);
 }
-#about-us .container .signature-container {
-  padding: 20px 0;
+
+#about-us .container .content {
+  width: 65%;
+  padding-right: 2%;
+  z-index: 1;
 }
-#about-us .container .signature-container .quote {
-  width: 55%;
+#about-us .container .form-container {
+  width: 35%;
+  position: absolute;
+  right: 0;
+  top: -120px;
+  background-color: var(--color-light);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
-#about-us .container .signature-container .paragraph {
-  width: 70%;
+#about-us .container .form-container .form-title {
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 10px;
+}
+#about-us .container .form-container .form-title h4 {
+  color: var(--color-accent);
+  margin: 5px 10px;
+}
+#about-us .container .form-container .form-description {
+  padding: 20px;
+  font-size: 13px;
+  font-family: Poppins, sans-serif;
+  font-weight: italic;
+  color: #7d7d7d;
+}
+#about-us .container .form-container form {
+  padding: 15px;
+}
+#about-us .container .form-container form .form-input, #about-us .container .form-container form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray);
+}
+#about-us .container .form-container .btn-accent {
+  width: calc(100% - 20px);
+  padding: 5px 120px;
+  margin: 10px 10px;
+  text-align: center;
 }
 
 .services {
@@ -1004,9 +1046,7 @@ footer .container {
     width: 40%;
     text-align: left;
   }
-}
-
-#risk-management {
+}#risk-management {
   padding: 50px 0;
 }
 #risk-management .container {
@@ -1017,7 +1057,7 @@ footer .container {
   #risk-management .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "about text text text";
+    grid-template-areas: "about text text text" "form form form form";
   }
 }
 #risk-management .container .about-us {
@@ -1034,6 +1074,28 @@ footer .container {
   margin: 0px 0 20px 0;
   color: var(--color-primary);
   font-weight: 600;
+}
+#risk-management .container .about-us .form-container {
+  background-color: var(--color-primary);
+  padding: 15px;
+  position: relative;
+}
+#risk-management .container .about-us .form-container h4 {
+  color: var(--color-accent);
+}
+#risk-management .container .about-us .form-container p {
+  color: var(--color-light);
+  font-size: 12px;
+  font-family: Poppins, sans-serif;
+  font-weight: italic;
+}
+#risk-management .container .about-us .form-container i {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+#risk-management .container .about-us .form-container .form-input {
+  width: 100%;
 }
 #risk-management .container .content {
   grid-area: text;
@@ -1068,6 +1130,36 @@ footer .container {
   left: 0px;
   top: 10px;
 }
+#risk-management .container .question-form {
+  grid-area: form;
+  padding: 50px 0;
+  width: 100%;
+}
+#risk-management .container .question-form .form-group {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0;
+  gap: 25px;
+}
+#risk-management .container .question-form .form-group input {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid var(--color-gray);
+}
+#risk-management .container .question-form .form-message {
+  width: 100%;
+  resize: none;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid var(--color-gray);
+}
+#risk-management .container .question-form .btn-primary {
+  margin: 25px 0;
+  color: var(--color-accent);
+}
+
+
 
 #our-projects {
   padding: 100px 0;
@@ -1140,6 +1232,29 @@ footer .container {
   border: 2px solid var(--color-gray);
   font-size: 14px;
   font-weight: 300;
+}
+#our-projects .container .tags-box .form-container {
+  background-color: var(--color-primary);
+  margin-top: 35px;
+  padding: 15px;
+  position: relative;
+}
+#our-projects .container .tags-box .form-container h4 {
+  color: var(--color-accent);
+}
+#our-projects .container .tags-box .form-container p {
+  color: var(--color-light);
+  font-size: 12px;
+  font-family: Poppins, sans-serif;
+  font-weight: italic;
+}
+#our-projects .container .tags-box .form-container i {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+#our-projects .container .tags-box .form-container .form-input {
+  width: 100%;
 }
 
 #location {

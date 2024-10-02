@@ -4,10 +4,36 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model.Name;
+	var thumbnail = Model?.Value<IPublishedContent>("serviceCardThumbnail")?.Url() ?? "";
 }
 
 <section id="risk-management">
-	@Html.Raw(Model.Value("singlePageText"))
+	<div class="container">
+		<div class="about-us">
+			<h5>@Model.Value("serviceCardHeadline")</h5>
+			<img src="@thumbnail" alt="">
+			<p>@Model.Value("serviceCardText")</p>
+			<div class="form-container">
+				<h4>How Can We Help You?</h4>
+				<p>Online Support 24/7, We are here to help you</p>
+				<input class="form-input"  type="email" placeholder="Email address"><i class="fa-regular fa-envelope"></i>
+			</div>
+		</div>
+		<div class="content">
+		@Html.Raw(Model.Value("singlePageText"))
+		</div>
+        <div class="question-form">
+            <h4>Have a Question?</h4>
+            <form >
+                <div class="form-group">
+                    <input class="text-input" type="text" placeholder="Name" required>
+                    <input class="text-input"  type="email" placeholder="Email address" required>
+                </div>
+                <textarea placeholder="Question" name="message" class="form-message"></textarea>
+            </form>
+            <a class="btn-primary" href="/">Submit</a>
+        </div>
+	</div>
 </section>
 
  @await Html.PartialAsync("Static/subFooter")
