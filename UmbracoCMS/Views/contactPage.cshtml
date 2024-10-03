@@ -10,6 +10,30 @@
  @await Html.PartialAsync("Static/subFooter")
 <section id="location">
     <img src="@locationImage" alt="">
+    <div class="container">
+        <div class="form-group">
+            <div class="headline">
+                <h6>REQUEST A CALL BACK</h6>
+                <h2>Let us know about your next project</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+            </div>
+            <form>
+                <div class="group-1">
+                    <input class="form-input" type="text" placeholder="Name" required>
+                    <input class="form-input"  type="email" placeholder="Email address" required>
+                </div>
+                <div class="group-2">
+                    <input class="form-input"  type="text" placeholder="Phone" required>
+                    <select required>
+                        <option value="" disabled selected>Financial consulting</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                    </select>
+                </div>
+            </form>
+            <a class="btn-primary" href="/">Submit</a>
+        </div>
+    </div>
 </section>
 
 

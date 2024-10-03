@@ -276,7 +276,7 @@ footer {
   color: var(--color-primary);
   font-size: 14px;
   font-weight: 300;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 footer .container {
   display: flex;
@@ -740,7 +740,7 @@ footer .container {
 }
 
 #partners {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 #partners .container {
   display: grid;
@@ -1259,9 +1259,67 @@ footer .container {
 
 #location {
   width: 100%;
+  position: relative;
+  height: 100vh;
 }
 #location img {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+    padding-bottom: 100px;
+}
+#location .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#location .container .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-light);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  padding: 40px 0;
+}
+#location .container .form-group .headline {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+#location .container .form-group .headline p {
+  padding: 20px;
+  font-size: 13px;
+  font-family: Poppins, sans-serif;
+  font-weight: italic;
+  color: #7d7d7d;
+}
+#location .container .form-group form {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+}
+#location .container .form-group form .form-input, #location .container .form-group form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray);
+}
+#location .container .form-group .btn-primary {
+  color: var(--color-accent);
 }
 
 #recent-projects {
