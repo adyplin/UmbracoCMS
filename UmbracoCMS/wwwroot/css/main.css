@@ -698,7 +698,7 @@ footer .container {
 }
 #projects .content .content-box .text-box {
   position: absolute;
-  bottom: 0px;
+  bottom: 23px;
   left: 0px;
   background-color: rgba(79, 89, 85, 0.6);
   width: 100%;
@@ -717,7 +717,7 @@ footer .container {
 #projects .content .content-box .text-box:hover {
   background-color: var(--color-primary);
   position: absolute;
-  bottom: 0px;
+  bottom: 23px;
   left: 0px;
   width: 100%;
 }
@@ -736,7 +736,7 @@ footer .container {
 #projects .content .content-box .text-box:hover .text {
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 25px 20px;
 }
 
 #partners {
@@ -1089,10 +1089,11 @@ footer .container {
   font-family: Poppins, sans-serif;
   font-weight: italic;
 }
-#risk-management .container .about-us .form-container i {
+#risk-management .container .about-us .form-container a {
   position: absolute;
-  bottom: 20px;
+  bottom: 18px;
   right: 20px;
+  color: var(--color-primary);
 }
 #risk-management .container .about-us .form-container .form-input {
   width: 100%;
@@ -1248,10 +1249,11 @@ footer .container {
   font-family: Poppins, sans-serif;
   font-weight: italic;
 }
-#our-projects .container .tags-box .form-container i {
+#our-projects .container .tags-box .form-container a {
   position: absolute;
-  bottom: 20px;
+  bottom: 13px;
   right: 20px;
+  color: var(--color-primary);
 }
 #our-projects .container .tags-box .form-container .form-input {
   width: 100%;
@@ -1271,7 +1273,7 @@ footer .container {
   z-index: 1;
   -o-object-fit: cover;
      object-fit: cover;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
 }
 #location .container {
   width: 100%;
@@ -1285,7 +1287,7 @@ footer .container {
   justify-content: center;
   width: 80%;
   position: absolute;
-  top: 75%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--color-light);
@@ -1317,9 +1319,6 @@ footer .container {
   margin-bottom: 10px;
   border-radius: 8px;
   border: 1px solid var(--color-gray);
-}
-#location .container .form-group .btn-primary {
-  color: var(--color-accent);
 }
 
 #recent-projects {
